@@ -52,12 +52,6 @@ const items: MediaItem[] = [
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_1305.jpg",
-    alt: "Carro após polimento",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    type: "image",
     src: "/images/galeria/IMG_1305 (1).jpg",
     alt: "Brilho da pintura",
     span: "col-span-1 row-span-1",
@@ -72,12 +66,6 @@ const items: MediaItem[] = [
     type: "image",
     src: "/images/galeria/IMG_1566.jpg",
     alt: "Lavagem detalhada",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    type: "image",
-    src: "/images/galeria/IMG_1566 (1).jpg",
-    alt: "Acabamento profissional",
     span: "col-span-2 row-span-1",
   },
   {
@@ -100,12 +88,6 @@ const items: MediaItem[] = [
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_4244 (1).jpg",
-    alt: "Carro limpo e brilhando",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    type: "image",
     src: "/images/galeria/IMG_5065.jpg",
     alt: "Higienização de bancos",
     span: "col-span-1 row-span-1",
@@ -124,15 +106,9 @@ const items: MediaItem[] = [
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_7111.jpg",
-    alt: "Antes do acabamento",
-    span: "col-span-2 row-span-1",
-  },
-  {
-    type: "image",
     src: "/images/galeria/IMG_7111 (1).jpg",
     alt: "Depois do acabamento",
-    span: "col-span-1 row-span-1",
+    span: "col-span-2 row-span-1",
   },
   {
     type: "image",
