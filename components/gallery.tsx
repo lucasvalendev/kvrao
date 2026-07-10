@@ -1,168 +1,168 @@
-'use client'
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Play, Pause } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { Play, Pause } from "lucide-react";
 
 type MediaItem =
   | {
-      type: 'image'
-      src: string
-      alt: string
-      span: string
+      type: "image";
+      src: string;
+      alt: string;
+      span: string;
     }
   | {
-      type: 'video'
-      src: string
-      alt: string
-      span: string
-    }
+      type: "video";
+      src: string;
+      alt: string;
+      span: string;
+    };
 
 const items: MediaItem[] = [
   {
-    type: 'image',
-    src: '/images/galeria/IMG_0029.jpg',
-    alt: 'Carro lavado no KVRÃO',
-    span: 'col-span-2 row-span-2',
+    type: "image",
+    src: "/images/galeria/IMG_0029.jpg",
+    alt: "Carro lavado no KVRÃO",
+    span: "col-span-2 row-span-2",
   },
   {
-    type: 'video',
-    src: '/images/galeria/WhatsApp Video 2026-07-09 at 13.05.10.mp4',
-    alt: 'Vídeo do serviço KVRÃO',
-    span: 'col-span-1 row-span-3',
+    type: "video",
+    src: "/images/galeria/WhatsApp Video 2026-07-09 at 13.05.10.mp4",
+    alt: "Vídeo do serviço KVRÃO",
+    span: "col-span-1 row-span-3",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_0272.jpg',
-    alt: 'Detalhe de limpeza',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_0272.jpg",
+    alt: "Detalhe de limpeza",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_0474.jpg',
-    alt: 'Resultado da lavagem',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_0474.jpg",
+    alt: "Resultado da lavagem",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_0950.jpg',
-    alt: 'Interior higienizado',
-    span: 'col-span-2 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_0950.jpg",
+    alt: "Interior higienizado",
+    span: "col-span-2 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_1305.jpg',
-    alt: 'Carro após polimento',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_1305.jpg",
+    alt: "Carro após polimento",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_1305 (1).jpg',
-    alt: 'Brilho da pintura',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_1305 (1).jpg",
+    alt: "Brilho da pintura",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'video',
-    src: '/images/galeria/WhatsApp Video 2026-07-09 at 13.05.10 (1).mp4',
-    alt: 'Vídeo do trabalho KVRÃO',
-    span: 'col-span-1 row-span-3',
+    type: "video",
+    src: "/images/galeria/WhatsApp Video 2026-07-09 at 13.05.10 (1).mp4",
+    alt: "Vídeo do trabalho KVRÃO",
+    span: "col-span-1 row-span-3",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_1566.jpg',
-    alt: 'Lavagem detalhada',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_1566.jpg",
+    alt: "Lavagem detalhada",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_1566 (1).jpg',
-    alt: 'Acabamento profissional',
-    span: 'col-span-2 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_1566 (1).jpg",
+    alt: "Acabamento profissional",
+    span: "col-span-2 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_3866.jpg',
-    alt: 'Serviço completo',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_3866.jpg",
+    alt: "Serviço completo",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_4203.jpg',
-    alt: 'Moto lavada no KVRÃO',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_4203.jpg",
+    alt: "Moto lavada no KVRÃO",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_4244.jpg',
-    alt: 'Detalhe de jato',
-    span: 'col-span-2 row-span-2',
+    type: "image",
+    src: "/images/galeria/IMG_4244.jpg",
+    alt: "Detalhe de jato",
+    span: "col-span-2 row-span-2",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_4244 (1).jpg',
-    alt: 'Carro limpo e brilhando',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_4244 (1).jpg",
+    alt: "Carro limpo e brilhando",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_5065.jpg',
-    alt: 'Higienização de bancos',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_5065.jpg",
+    alt: "Higienização de bancos",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_5523.jpg',
-    alt: 'Resultado real',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_5523.jpg",
+    alt: "Resultado real",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_7075.jpg',
-    alt: 'Lavagem externa',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_7075.jpg",
+    alt: "Lavagem externa",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_7111.jpg',
-    alt: 'Antes do acabamento',
-    span: 'col-span-2 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_7111.jpg",
+    alt: "Antes do acabamento",
+    span: "col-span-2 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_7111 (1).jpg',
-    alt: 'Depois do acabamento',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_7111 (1).jpg",
+    alt: "Depois do acabamento",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_7696.jpg',
-    alt: 'Carro zero sujeira',
-    span: 'col-span-1 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_7696.jpg",
+    alt: "Carro zero sujeira",
+    span: "col-span-1 row-span-1",
   },
   {
-    type: 'image',
-    src: '/images/galeria/IMG_9102.jpg',
-    alt: 'Trabalho finalizado',
-    span: 'col-span-2 row-span-1',
+    type: "image",
+    src: "/images/galeria/IMG_9102.jpg",
+    alt: "Trabalho finalizado",
+    span: "col-span-2 row-span-1",
   },
-]
+];
 
 function VideoTile({ src, alt }: { src: string; alt: string }) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [playing, setPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
 
   const toggle = useCallback(() => {
-    const v = videoRef.current
-    if (!v) return
+    const v = videoRef.current;
+    if (!v) return;
     if (v.paused) {
-      void v.play()
-      setPlaying(true)
+      void v.play();
+      setPlaying(true);
     } else {
-      v.pause()
-      setPlaying(false)
+      v.pause();
+      setPlaying(false);
     }
-  }, [])
+  }, []);
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-muted">
@@ -183,18 +183,23 @@ function VideoTile({ src, alt }: { src: string; alt: string }) {
         type="button"
         onClick={toggle}
         className="absolute inset-0 flex items-center justify-center bg-background/20 transition-colors hover:bg-background/30"
-        aria-label={playing ? 'Pausar vídeo' : 'Reproduzir vídeo'}
+        aria-label={playing ? "Pausar vídeo" : "Reproduzir vídeo"}
       >
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg">
           {playing ? (
             <Pause size={22} fill="currentColor" aria-hidden="true" />
           ) : (
-            <Play size={22} fill="currentColor" className="ml-0.5" aria-hidden="true" />
+            <Play
+              size={22}
+              fill="currentColor"
+              className="ml-0.5"
+              aria-hidden="true"
+            />
           )}
         </span>
       </button>
     </div>
-  )
+  );
 }
 
 function ImageTile({
@@ -203,49 +208,49 @@ function ImageTile({
   onPress,
   onRelease,
 }: {
-  src: string
-  alt: string
-  onPress: () => void
-  onRelease: () => void
+  src: string;
+  alt: string;
+  onPress: () => void;
+  onRelease: () => void;
 }) {
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const startRef = useRef<{ x: number; y: number } | null>(null)
-  const activeRef = useRef(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const startRef = useRef<{ x: number; y: number } | null>(null);
+  const activeRef = useRef(false);
 
   const clearTimer = () => {
     if (timerRef.current) {
-      clearTimeout(timerRef.current)
-      timerRef.current = null
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
-  }
+  };
 
   const endPress = () => {
-    clearTimer()
-    startRef.current = null
+    clearTimer();
+    startRef.current = null;
     if (activeRef.current) {
-      activeRef.current = false
-      onRelease()
+      activeRef.current = false;
+      onRelease();
     }
-  }
+  };
 
   return (
     <div
       className="relative h-full w-full cursor-zoom-in select-none overflow-hidden bg-muted"
       onPointerDown={(e) => {
-        if (e.button !== 0) return
-        startRef.current = { x: e.clientX, y: e.clientY }
-        clearTimer()
+        if (e.button !== 0) return;
+        startRef.current = { x: e.clientX, y: e.clientY };
+        clearTimer();
         // delay → scroll lateral ainda funciona
         timerRef.current = setTimeout(() => {
-          activeRef.current = true
-          onPress()
-        }, 160)
+          activeRef.current = true;
+          onPress();
+        }, 160);
       }}
       onPointerMove={(e) => {
-        if (!startRef.current || activeRef.current) return
-        const dx = Math.abs(e.clientX - startRef.current.x)
-        const dy = Math.abs(e.clientY - startRef.current.y)
-        if (dx > 10 || dy > 10) endPress()
+        if (!startRef.current || activeRef.current) return;
+        const dx = Math.abs(e.clientX - startRef.current.x);
+        const dy = Math.abs(e.clientY - startRef.current.y);
+        if (dx > 10 || dy > 10) endPress();
       }}
       onPointerUp={endPress}
       onPointerCancel={endPress}
@@ -254,14 +259,14 @@ function ImageTile({
       tabIndex={0}
       aria-label={`${alt} — segure para ampliar`}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          activeRef.current = true
-          onPress()
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          activeRef.current = true;
+          onPress();
         }
       }}
       onKeyUp={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') endPress()
+        if (e.key === "Enter" || e.key === " ") endPress();
       }}
     >
       <Image
@@ -273,28 +278,28 @@ function ImageTile({
         draggable={false}
       />
     </div>
-  )
+  );
 }
 
 export function Gallery() {
   const [expanded, setExpanded] = useState<{ src: string; alt: string } | null>(
     null,
-  )
-  const releaseExpanded = useCallback(() => setExpanded(null), [])
+  );
+  const releaseExpanded = useCallback(() => setExpanded(null), []);
 
   useEffect(() => {
-    if (!expanded) return
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    const onUp = () => releaseExpanded()
-    window.addEventListener('pointerup', onUp)
-    window.addEventListener('pointercancel', onUp)
+    if (!expanded) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onUp = () => releaseExpanded();
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
     return () => {
-      document.body.style.overflow = prev
-      window.removeEventListener('pointerup', onUp)
-      window.removeEventListener('pointercancel', onUp)
-    }
-  }, [expanded, releaseExpanded])
+      document.body.style.overflow = prev;
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
+    };
+  }, [expanded, releaseExpanded]);
 
   return (
     <section id="galeria" className="border-y border-border bg-card/40 py-24">
@@ -302,7 +307,7 @@ export function Gallery() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
@@ -313,8 +318,7 @@ export function Gallery() {
             GALERIA DO QUE JÁ SAIU DAQUI
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
-            Foto real, serviço real. Segura a imagem pra ampliar — solta o dedo e
-            ela volta. Vídeo mudo, você decide se dá play.
+            Alguns serviços já realizados no lava rápido KVRÃO.
           </p>
         </motion.div>
 
@@ -324,12 +328,12 @@ export function Gallery() {
             <article
               key={item.src}
               className={
-                item.type === 'video'
-                  ? 'group relative aspect-[9/16] w-[52%] shrink-0 snap-center overflow-hidden rounded-lg border border-border'
-                  : 'group relative aspect-[3/4] w-[70%] shrink-0 snap-center overflow-hidden rounded-lg border border-border'
+                item.type === "video"
+                  ? "group relative aspect-[9/16] w-[52%] shrink-0 snap-center overflow-hidden rounded-lg border border-border"
+                  : "group relative aspect-[3/4] w-[70%] shrink-0 snap-center overflow-hidden rounded-lg border border-border"
               }
             >
-              {item.type === 'video' ? (
+              {item.type === "video" ? (
                 <VideoTile src={item.src} alt={item.alt} />
               ) : (
                 <ImageTile
@@ -350,11 +354,11 @@ export function Gallery() {
               key={item.src}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
+              viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.45, delay: Math.min(i * 0.03, 0.35) }}
               className={`group relative min-h-0 overflow-hidden rounded-lg border border-border ${item.span}`}
             >
-              {item.type === 'video' ? (
+              {item.type === "video" ? (
                 <VideoTile src={item.src} alt={item.alt} />
               ) : (
                 <ImageTile
@@ -386,7 +390,7 @@ export function Gallery() {
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+              transition={{ type: "spring", stiffness: 380, damping: 28 }}
               className="relative h-[min(85vh,900px)] w-full max-w-3xl overflow-hidden rounded-xl border border-primary/40 shadow-2xl"
             >
               <Image
@@ -406,5 +410,5 @@ export function Gallery() {
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }
