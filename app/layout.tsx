@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/kvrao-art.jpeg",
-        width: 1200,
-        height: 630,
+        width: 4500,
+        height: 2700,
         alt: "Lava Rápido KVRÃO — estética automotiva em São José dos Campos",
         type: "image/jpeg",
       },
