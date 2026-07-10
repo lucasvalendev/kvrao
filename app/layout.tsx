@@ -15,9 +15,35 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kvrao.vercel.app"),
   title: "Lava Rápido KVRÃO | Estética Automotiva em São José dos Campos",
   description:
     "Seu carro limpo como novo. Lavagem completa, higienização de bancos e estética automotiva na Vila Tesouro, São José dos Campos. Chega sujo, sai brilhando.",
+  openGraph: {
+    title: "Lava Rápido KVRÃO | Estética Automotiva em São José dos Campos",
+    description:
+      "Seu carro limpo como novo. Lavagem completa, higienização de bancos e estética automotiva na Vila Tesouro, São José dos Campos. Chega sujo, sai brilhando.",
+    url: "/",
+    siteName: "Lava Rápido KVRÃO",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/images/kvrao-art.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Lava Rápido KVRÃO — estética automotiva em São José dos Campos",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lava Rápido KVRÃO | Estética Automotiva em São José dos Campos",
+    description:
+      "Seu carro limpo como novo. Lavagem completa, higienização de bancos e estética automotiva na Vila Tesouro, São José dos Campos.",
+    images: ["/images/kvrao-art.jpeg"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48" },
