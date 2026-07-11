@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { Clock, MapPin, Navigation } from "lucide-react";
 import { InstagramIcon } from "@/components/instagram-icon";
-
-const INSTAGRAM_URL = "https://www.instagram.com/lavarapido_kvrao/";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { INSTAGRAM_URL, WHATSAPP_URL } from "@/lib/contact";
 
 const ADDRESS =
   "Estrada Municipal Martins Guimarães, 190 - Vila Tesouro - São José dos Campos - SP, 12221-520";
@@ -102,14 +102,46 @@ export function Location() {
             </a>
 
             <a
-              href={mapsDirectionsUrl}
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 font-serif text-lg tracking-wider text-primary-foreground transition-transform hover:scale-[1.03]"
+              className="flex items-start gap-4 rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50"
             >
-              <Navigation size={20} aria-hidden="true" />
-              COMO CHEGAR
+              <div className="rounded-md bg-primary/10 p-3 text-primary">
+                <WhatsAppIcon size={24} />
+              </div>
+              <div>
+                <h3 className="font-serif text-lg tracking-wide text-card-foreground">
+                  WhatsApp
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  (12) 98828-1898
+                  <br />
+                  Agenda direto com o KVRÃO
+                </p>
+              </div>
             </a>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 font-serif text-lg tracking-wider text-primary-foreground transition-transform hover:scale-[1.03]"
+              >
+                <WhatsAppIcon size={20} />
+                WHATSAPP
+              </a>
+              <a
+                href={mapsDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-border bg-secondary px-8 py-4 font-serif text-lg tracking-wider text-secondary-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                <Navigation size={20} aria-hidden="true" />
+                COMO CHEGAR
+              </a>
+            </div>
           </motion.div>
 
           <motion.div

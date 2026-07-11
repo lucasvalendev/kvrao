@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, MapPin } from "lucide-react";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export function Hero() {
   return (
@@ -67,10 +69,13 @@ export function Hero() {
             className="mt-8 flex flex-wrap gap-4"
           >
             <a
-              href="#como-chegar"
-              className="rounded-md bg-primary px-8 py-4 font-serif text-lg tracking-wider text-primary-foreground transition-transform hover:scale-105"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 font-serif text-lg tracking-wider text-primary-foreground transition-transform hover:scale-105"
             >
-              COMO CHEGAR
+              <WhatsAppIcon size={20} />
+              WHATSAPP
             </a>
             <a
               href="#antes-depois"

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { InstagramIcon } from "@/components/instagram-icon";
-
-const INSTAGRAM_URL = "https://www.instagram.com/lavarapido_kvrao/";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { INSTAGRAM_URL, WHATSAPP_URL } from "@/lib/contact";
 
 export function SiteFooter() {
   return (
@@ -19,16 +19,28 @@ export function SiteFooter() {
           <br />
           São José dos Campos/SP — CEP 12.221-520
         </p>
-        <a
-          href={INSTAGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-          aria-label="Instagram do Lava Rápido KVRÃO"
-        >
-          <InstagramIcon size={18} />
-          @lavarapido_kvrao
-        </a>
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            aria-label="WhatsApp do Lava Rápido KVRÃO"
+          >
+            <WhatsAppIcon size={18} />
+            (12) 98828-1898
+          </a>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            aria-label="Instagram do Lava Rápido KVRÃO"
+          >
+            <InstagramIcon size={18} />
+            @lavarapido_kvrao
+          </a>
+        </div>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Lava Rápido KVRÃO. Sujeira aqui não
           sobrevive.

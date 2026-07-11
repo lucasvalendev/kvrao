@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { InstagramIcon } from '@/components/instagram-icon'
-
-const INSTAGRAM_URL = 'https://www.instagram.com/lavarapido_kvrao/'
+import { WhatsAppIcon } from '@/components/whatsapp-icon'
+import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/contact'
 
 export function CtaBanner() {
   return (
@@ -34,9 +34,12 @@ export function CtaBanner() {
           </p>
           <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="#como-chegar"
-              className="inline-block rounded-md bg-primary px-10 py-4 font-serif text-lg tracking-wider text-primary-foreground transition-transform hover:scale-105"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-10 py-4 font-serif text-lg tracking-wider text-primary-foreground transition-transform hover:scale-105"
             >
+              <WhatsAppIcon size={20} />
               BORA LAVAR
             </a>
             <a

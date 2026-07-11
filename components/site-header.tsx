@@ -5,8 +5,9 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { InstagramIcon } from '@/components/instagram-icon'
+import { WhatsAppIcon } from '@/components/whatsapp-icon'
+import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib/contact'
 
-const INSTAGRAM_URL = 'https://www.instagram.com/lavarapido_kvrao/'
 
 const links = [
   { href: '#servicos', label: 'Serviços' },
@@ -59,9 +60,12 @@ export function SiteHeader() {
             <InstagramIcon size={20} />
           </a>
           <a
-            href="#como-chegar"
-            className="rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-transform hover:scale-105"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-transform hover:scale-105"
           >
+            <WhatsAppIcon size={16} />
             AGENDAR
           </a>
         </nav>
@@ -99,6 +103,16 @@ export function SiteHeader() {
             >
               <InstagramIcon size={18} />
               Instagram
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-bold text-primary-foreground"
+            >
+              <WhatsAppIcon size={18} />
+              Agendar no WhatsApp
             </a>
           </div>
         </nav>
