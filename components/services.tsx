@@ -2,7 +2,15 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Armchair, Droplets, Gem, Scooter, Sparkles, Zap } from "lucide-react";
+import {
+  Armchair,
+  CloudRain,
+  Droplets,
+  Gem,
+  Scooter,
+  Sparkles,
+  Zap,
+} from "lucide-react";
 
 const services = [
   {
@@ -28,6 +36,12 @@ const services = [
     title: "Enceramento e Cristalização",
     description:
       "Cera que encera e cristaliza numa tacada só — proteção na pintura, brilho duradouro e repelência à água. Carro protegido e com cara de vitrine.",
+  },
+  {
+    icon: CloudRain,
+    title: "Remoção de Chuva Ácida",
+    description:
+      "Tira manchas e marcas de chuva ácida que a lavagem comum não resolve. Pintura limpa de novo, sem aquele aspecto opaco e manchado de tempo.",
   },
   {
     icon: Scooter,

@@ -22,7 +22,7 @@ type MediaItem =
 const items: MediaItem[] = [
   {
     type: "image",
-    src: "/images/galeria/IMG_0029.jpg",
+    src: "/images/galeria/IMG_0029 (1).jpg",
     alt: "Carro lavado no KVRÃO",
     span: "col-span-2 row-span-2",
   },
@@ -34,27 +34,21 @@ const items: MediaItem[] = [
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_0272.jpg",
+    src: "/images/galeria/IMG_0272 (1).jpg",
     alt: "Detalhe de limpeza",
     span: "col-span-1 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_0474.jpg",
+    src: "/images/galeria/IMG_0474 (1).jpg",
     alt: "Resultado da lavagem",
     span: "col-span-1 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_0950.jpg",
+    src: "/images/galeria/IMG_0950 (1).jpg",
     alt: "Interior higienizado",
     span: "col-span-2 row-span-1",
-  },
-  {
-    type: "image",
-    src: "/images/galeria/IMG_1305 (1).jpg",
-    alt: "Brilho da pintura",
-    span: "col-span-1 row-span-1",
   },
   {
     type: "video",
@@ -64,63 +58,51 @@ const items: MediaItem[] = [
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_1566.jpg",
+    src: "/images/galeria/IMG_1566 (2).jpg",
     alt: "Lavagem detalhada",
     span: "col-span-2 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_3866.jpg",
+    src: "/images/galeria/IMG_3866 (1).jpg",
     alt: "Serviço completo",
     span: "col-span-1 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_4203.jpg",
+    src: "/images/galeria/IMG_4203 (1).jpg",
     alt: "Moto lavada no KVRÃO",
     span: "col-span-1 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_4244.jpg",
+    src: "/images/galeria/IMG_4244 (2).jpg",
     alt: "Detalhe de jato",
     span: "col-span-2 row-span-2",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_5065.jpg",
-    alt: "Higienização de bancos",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    type: "image",
-    src: "/images/galeria/IMG_5523.jpg",
+    src: "/images/galeria/IMG_5523 (1).jpg",
     alt: "Resultado real",
     span: "col-span-1 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_7075.jpg",
+    src: "/images/galeria/IMG_7075 (1).jpg",
     alt: "Lavagem externa",
     span: "col-span-1 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_7111 (1).jpg",
+    src: "/images/galeria/IMG_7111 (2).jpg",
     alt: "Depois do acabamento",
     span: "col-span-2 row-span-1",
   },
   {
     type: "image",
-    src: "/images/galeria/IMG_7696.jpg",
+    src: "/images/galeria/IMG_7696 (1).jpg",
     alt: "Carro zero sujeira",
     span: "col-span-1 row-span-1",
-  },
-  {
-    type: "image",
-    src: "/images/galeria/IMG_9102.jpg",
-    alt: "Trabalho finalizado",
-    span: "col-span-2 row-span-1",
   },
 ];
 

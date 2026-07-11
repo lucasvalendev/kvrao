@@ -1,34 +1,40 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Clock, MapPin, Navigation } from 'lucide-react'
-import { InstagramIcon } from '@/components/instagram-icon'
+import { motion } from "framer-motion";
+import { Clock, MapPin, Navigation } from "lucide-react";
+import { InstagramIcon } from "@/components/instagram-icon";
 
-const INSTAGRAM_URL = 'https://www.instagram.com/lavarapido_kvrao/'
+const INSTAGRAM_URL = "https://www.instagram.com/lavarapido_kvrao/";
 
 const ADDRESS =
-  'Estrada Municipal Martins Guimarães, 190 - Vila Tesouro - São José dos Campos - SP, 12221-520'
+  "Estrada Municipal Martins Guimarães, 190 - Vila Tesouro - São José dos Campos - SP, 12221-520";
 
-const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`
-const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`
+const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`;
+const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(ADDRESS)}`;
 
 export function Location() {
   return (
-    <section id="como-chegar" className="border-t border-border bg-card/40 py-24">
+    <section
+      id="como-chegar"
+      className="border-t border-border bg-card/40 py-24"
+    >
       <div className="mx-auto max-w-6xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <p className="mb-3 font-serif text-sm tracking-[0.3em] text-primary">LOCALIZAÇÃO</p>
+          <p className="mb-3 font-serif text-sm tracking-[0.3em] text-primary">
+            LOCALIZAÇÃO
+          </p>
           <h2 className="font-serif text-4xl tracking-wide text-foreground text-balance md:text-5xl">
             COLA AQUI NA VILA TESOURO
           </h2>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
-            Fácil de chegar, difícil de esquecer. Aponta o GPS e vem que o KVRÃO resolve.
+            Fácil de chegar, difícil de esquecer. Aponta o GPS e vem que o KVRÃO
+            resolve.
           </p>
         </motion.div>
 
@@ -36,7 +42,7 @@ export function Location() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center gap-6 lg:col-span-2"
           >
@@ -45,7 +51,9 @@ export function Location() {
                 <MapPin size={24} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-serif text-lg tracking-wide text-card-foreground">Endereço</h3>
+                <h3 className="font-serif text-lg tracking-wide text-card-foreground">
+                  Endereço
+                </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   Estrada Municipal Martins Guimarães, 190
                   <br />
@@ -61,9 +69,11 @@ export function Location() {
                 <Clock size={24} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-serif text-lg tracking-wide text-card-foreground">Horário</h3>
+                <h3 className="font-serif text-lg tracking-wide text-card-foreground">
+                  Horário
+                </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  Segunda a sábado — 8h às 18h
+                  Segunda a sábado — 8h30 às 17h30
                   <br />
                   Domingo — fechado (até o KVRÃO descansa)
                 </p>
@@ -80,7 +90,9 @@ export function Location() {
                 <InstagramIcon size={24} />
               </div>
               <div>
-                <h3 className="font-serif text-lg tracking-wide text-card-foreground">Instagram</h3>
+                <h3 className="font-serif text-lg tracking-wide text-card-foreground">
+                  Instagram
+                </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   @lavarapido_kvrao
                   <br />
@@ -103,7 +115,7 @@ export function Location() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
             className="overflow-hidden rounded-lg border border-border lg:col-span-3"
           >
@@ -111,7 +123,7 @@ export function Location() {
               src={mapsEmbedUrl}
               title="Mapa do Lava Rápido KVRÃO em São José dos Campos"
               className="h-[400px] w-full lg:h-full lg:min-h-[460px]"
-              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
+              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
@@ -120,5 +132,5 @@ export function Location() {
         </div>
       </div>
     </section>
-  )
+  );
 }
