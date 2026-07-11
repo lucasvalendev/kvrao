@@ -115,7 +115,7 @@ export function Location() {
                   WhatsApp
                 </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                  (12) 98828-1898
+                  (12) 98848-1898
                   <br />
                   Agenda direto com o KVRÃO
                 </p>

@@ -2,7 +2,7 @@
 
 export const INSTAGRAM_URL = "https://www.instagram.com/lavarapido_kvrao/";
 
-/** E.164 sem + ou espaços: +55 12 98828-1898 */
+/** E.164 sem + ou espaços: +55 12 98848-1898 */
 export const WHATSAPP_NUMBER = "5512988281898";
 
 export const WHATSAPP_MESSAGE =

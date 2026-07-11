@@ -28,7 +28,7 @@ export function SiteFooter() {
             aria-label="WhatsApp do Lava Rápido KVRÃO"
           >
             <WhatsAppIcon size={18} />
-            (12) 98828-1898
+            (12) 98848-1898
           </a>
           <a
             href={INSTAGRAM_URL}
