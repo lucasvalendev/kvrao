@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Armchair, Droplets, Scooter, Sparkles, Zap } from "lucide-react";
+import { Armchair, Droplets, Gem, Scooter, Sparkles, Zap } from "lucide-react";
 
 const services = [
   {
@@ -22,6 +22,12 @@ const services = [
     title: "Polimento",
     description:
       "Acabamento profissional que remove riscos leves e devolve o brilho espelhado da pintura. Carro sai refletindo até a inveja do vizinho.",
+  },
+  {
+    icon: Gem,
+    title: "Enceramento e Cristalização",
+    description:
+      "Cera que encera e cristaliza numa tacada só — proteção na pintura, brilho duradouro e repelência à água. Carro protegido e com cara de vitrine.",
   },
   {
     icon: Scooter,
