@@ -107,6 +107,8 @@ export function Location() {
               rel="noopener noreferrer"
               className="flex items-start gap-4 rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50"
             >
+
+
               <div className="rounded-md bg-primary/10 p-3 text-primary">
                 <WhatsAppIcon size={24} />
               </div>
